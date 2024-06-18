@@ -1,5 +1,6 @@
 package com.example.myapp1
 
+import android.app.DownloadManager
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -11,13 +12,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.coroutines.Continuation
+
 class HomeActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     //lateinit var brake:Int?
     var TAG = HomeActivity::class.java.simpleName   //"HomeActivity"
-
     var data = arrayOf("india","english","android","computers")
     var b = 20
-
     lateinit var mySpinner: Spinner
     lateinit var recyclerview:RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,13 +49,10 @@ class HomeActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         var item = adapter?.selectedItem.toString()
         Log.i(TAG,item)
         println(b)
-
     }
-
     override fun onNothingSelected(parent: AdapterView<*>?) {
         TODO("Not yet implemented")
     }
-
     fun getShowText(view: View) {
         //get the text from et
         var uiEt:EditText = findViewById(R.id.etUi)
@@ -63,5 +61,20 @@ class HomeActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         var uiTv: TextView = findViewById(R.id.tvUi)
         uiTv.setText(textTyped)
     }
+
+    //https://openweathermap.com/getweather/bangalore
+    fun getWeather(cityName:String):String{
+        //it queries the weather database -- sensors
+        return "{city:bangalore, temp:25,windspeed:32mph}"
+    }
+
+    //https://abdul.com/add/a=10,b=20
+    fun add(a:Int, b:Int):Int{
+        return a+b
+    }
+
+
+
+    //  suspend  fun doSomething(request: DownloadManager.Request,continuation: Continuation): Response
 
 }
