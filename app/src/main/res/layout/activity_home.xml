@@ -11,69 +11,19 @@
         android:id="@+id/tvHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="139dp"
         android:text="home"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:entries="@array/countries"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
-
-    <EditText
-        android:id="@+id/etUi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="19dp"
-        android:ems="10"
-        android:hint="enter test string"
-        android:inputType="text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerview" />
-
     <Button
-        android:id="@+id/btnUi"
+        android:id="@+id/btnGet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="11dp"
-        android:text="get text"
-        android:onClick="getShowText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUi" />
-
-    <TextView
-        android:id="@+id/tvUi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="23dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnUi" />
-
+        android:text="get json"
+        android:onClick="getJson"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="192dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
