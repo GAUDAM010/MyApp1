@@ -2,14 +2,15 @@ package com.example.myapp1
 
 import androidx.lifecycle.ViewModel
 import android.os.CountDownTimer
+import androidx.lifecycle.MutableLiveData
 import android.util.Log
 
 class HomeViewModel {
     var TAG = HomeViewModel::class.java.simpleName
     lateinit var timer: CountDownTimer
-    var _seconds:Int = 0
-
+    val _seconds = MutableLiveData<Int>()
     var count = 0
+
 
     fun incrementCount(){
         count++
@@ -19,7 +20,7 @@ class HomeViewModel {
 fun startTimer() {
     timer = object :CountDownTimer(10_000,1_000){
         override fun onTick(millisUntilFinished: Long) {
-            _seconds = millisUntilFinished.toInt()
+            _seconds.value = millisUntilFinished.toInt()
             Log.i(TAG, "time remaining ="+millisUntilFinished.toInt())
         }
 
